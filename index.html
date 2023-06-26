@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tai Beauty</title>
+  <meta name="description" content=
+  "Văn Long & Hồng Hạnh - Our wedding date: 2023-07-23 | Điều tuyệt vời nhất mà bạn từng học là yêu và được yêu để đáp lại">
+  <meta name="keywords" content=
+  "Wedding, Wedding website, Website đám cưới, Tạo website đám cưới miễn phí">
+  <meta property="og:site_name" content=
+  "Nguyễn Văn Long & Trịnh Thị Hồng Hạnh">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content=
+  "Văn Long & Hồng Hạnh Wedding site!">
+  <meta property="og:url" content=
+  "https://thiepmoil231217h.iwedding.info">
+  <meta property="og:description" content=
+  "Văn Long & Hồng Hạnh - Our wedding date: 2023-07-23 | Điều tuyệt vời nhất mà bạn từng học là yêu và được yêu để đáp lại">
+  <meta property="og:image" content=
+  "https://cdn.biihappy.com/ziiweb/website/649976f93a469a0f1d060ebb/b97005217fa7fb28708133d78c7deacc.jpeg">
+  <meta property="og:image:url" content=
+  "https://cdn.biihappy.com/ziiweb/website/649976f93a469a0f1d060ebb/b97005217fa7fb28708133d78c7deacc.jpeg">
+  <meta property="og:image:secure_url" content=
+  "https://cdn.biihappy.com/ziiweb/website/649976f93a469a0f1d060ebb/b97005217fa7fb28708133d78c7deacc.jpeg">
+  <link rel="shortcut icon" type="image/x-icon" href=
+  "https://thiepmoil231217h.iwedding.info/favicon.ico">
+  
+  <link href=
+  "https://thiepmoil231217h.iwedding.info/templates/template15/css/libs.css?v=202306251"
+  rel="stylesheet">
+    <link href=
+  "https://thiepmoil231217h.iwedding.info/templates/template15/css/style.css?v=202306251"
+  rel="stylesheet">
+  <link href=
+  "https://thiepmoil231217h.iwedding.info/common/fonts/fonts.css?v=202306251"
+  rel="stylesheet"> 
+
+
+
+ <style>
+    /* CSS cho modal */
+    .modal {
+      display: none; /* Mặc định ẩn modal */
+      position: fixed; /* Vị trí cố định trên trang */
+      z-index: 100000; /* Hiển thị modal trước tất cả các phần tử khác */
+      padding-top: 50px; /* Khoảng cách từ đỉnh trang đến modal */
+      left: 0;
+      top: 0;
+      width: 100%; /* Chiều rộng modal bằng 100% của trang */
+      height: 100%; /* Chiều cao modal bằng 100% của trang */
+      overflow: auto; /* Cho phép cuộn trang khi modal hiển thị */
+      background-color: rgb(0,0,0); /* Màu nền của modal */
+      background-color: rgba(0,0,0,0.9); /* Màu nền của modal với độ mờ */
+    }
+    
+    .modal-content {
+      margin: auto; /* Hiển thị modal ở giữa trang */
+      display: block; /* Hiển thị các phần tử thành khối */
+      width: 80%; /* Chiều rộng của modal */
+      max-width: 700px; /* Chiều rộng tối đa của modal */
+      transition: width 0.5s ease; /* Hiệu ứng transition */
+    }
+    
+    /* CSS cho nút đóng */
+    .close {
+      color: #fff; /* Màu chữ của nút đóng */
+      float: right; /* Đặt nút đóng bên phải */
+      font-size: 28px; /* Kích thước chữ của nút đóng */
+      font-weight: bold; /* In đậm chữ của nút đóng */
+      margin-right: 20px; /* Khoảng cách nút đóng với modal */
+      transition: transform 0.3s ease; /* Hiệu ứng transition */
+    }
+    
+    /* CSS cho hiệu ứng phóng to hình ảnh */
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.5s ease; /* Hiệu ứng transition */
+    }
+    /* CSS cho hiệu ứng phóng to khi modal hiển thị */
+    .modal.show .modal-content {
+      width: 80%;
+    }
+    
+    /* CSS cho hiệu ứng xoay nút đóng khi modal hiển thị */
+    .modal.show .close {
+      transform: rotate(180deg);
+    }
+  </style>
+
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="">
+      <!--div class="middle"></div>
+    </div-->
+    <header id="header" class="site-header header-style-1">
+      <div class="topbar">
+        <div class="container">
+          <div class="row">
+            <div class="col col-xs-12">
+              <div class="site-logo">
+                <a href="/">
+                <h1>Nguyễn Tấn Tài</h1><span>Makeup</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!---nav class="navigation navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <div class="logo">
+              <a href="#home"><span>NTT</span></a>
+            </div>
+          <button type="button" class=
+            "open-btn"><span class="sr-only">Toggle
+            navigation</span> </button>
+          </div>
+          <div id="navbar" class=
+          "navbar-collapse collapse navigation-holder">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="#couple">Cặp đôi</a>
+              </li>
+              <li>
+                <a href="#gallery">Album cưới</a>
+              </li>
+              <li>
+                <a href="#events">Sự kiện</a>
+              </li>
+              <li>
+                <a href="#wishes">Lời chúc</a>
+              </li>
+              <li>
+                <a href="#donate">Mừng cưới</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav--->
+      
+    </header>
+    <section class="hero-slider hero-style-1" id="home">
+      <div class="swiper-container">
+        <div class="slide-main-text">
+          <div class="container">
+            <div class="slide-title">
+              <h2><span>Tài Beauty</span></h2>
+            </div>
+            <div class="wedding-date">
+              Nơi vẻ đẹp bắt đầu
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="pattern"></div>
+        </div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="slide-inner slide-bg-image"
+            data-background="https://i.ibb.co/2sYjmY8/mmexport1687786983581.jpg">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slide-inner slide-bg-image"
+            data-background="https://i.ibb.co/3dChm8g/mmexport1687786979542.jpg">
+            </div>
+          </div>
+             <div class="swiper-slide">
+
+            <div class="slide-inner slide-bg-image"
+
+            data-background="https://i.ibb.co/GvFCgHF/mmexport1687786976302.jpg">
+            </div>
+          </div>
+      
+      
+      
+     
+
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+    <section class=
+    "invitation-section section-padding section-bg-img">
+      <div class="container">
+        <div class="row">
+          <div class="col col-md-6">
+            <div class="invitation-box left">
+              <div class="left-vec"></div>
+              <div class="right-vec"></div>
+              <div class="inner">
+                <h2>Chương trình ưu đãi</h2><span></span>
+                <h3>Trọn gói Ngày Cưới</h3>
+                <p>
+                
+                 Combo 1 Hình Cổng :60x90 ép gỗ+ 10 ảnh trang trí tại studio.<br/>
+                 2 váy cưới cao cấp trị giá 2tr/ váy<br/>
+                 1 vest chú rể trị giá 800k/bộ<br/>
+                 1 cặp áo dài lễ dâu rể trị giá 1tr500k<br/>
+                 6 áo dài bê mâm quả nữ 100k / bộ 600k<br/>
+                 6 áo dài bê mâm quả nam 150k/ bộ 900k<br/>
+                 1 Makeup Cô Dâu tại tiệm từ chuyên viên 1tr500k<br/>
+                 1 hoa cầm tay/ bó
+             </p>
+                <a href="#wishes" class="theme-btn">Đặt lịch ngay </a>
+              </div>
+            </div>
+          </div>
+          <div class="col col-md-6">
+
+        </div>
+      </div>
+    </section>
+    <section class="couple-section section-padding" id="couple">
+      <div class="container">
+        <div class="row">
+          <div class=
+          "col col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+            <div class="section-title">
+              <h2>Giới thiệu</h2>
+              <p>Nếu bạn mong muốn, chúng tôi sẽ thực hiện.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-lg-10 col-lg-offset-1">
+            <div class="couple-area">
+              <div class="couple-row clearfix">
+                <div class="img-holder"><img src=
+                "https://i.ibb.co/By2zTnW/received-1437561073677038.jpg"
+                alt=""></div>
+                <div class="details">
+                  <div class="inner">
+                    <h2>Nguyễn Tấn Tài</h2>
+                    <p>Sinh năm 2006. Lớn lên và sinh sống tại Tây Ninh.</p>
+                    <ul class="social-links"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+        <section class="gallery-section section-padding" id="gallery">
+      <div class="container">
+        <div class="row">
+          <div class=
+          "col col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+            <div class="section-title">
+              <h2>Album của Tài</h2>
+              <p>Hãy tự tin, hãy là bạn.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-xs-12">
+            <div class=
+            "gallery-container gallery-fancybox masonry-gallery">
+              <div class="grid grid-item">
+         <img src=
+                "https://i.ibb.co/By2zTnW/received-1437561073677038.jpg"
+                alt="" class="my-image img img-responsive">
+              </div>
+              <div class="grid grid-item">
+       <img src="https://i.ibb.co/2sYjmY8/mmexport1687786983581.jpg" alt="mmexport1687786983581" border="0"class="my-image img img-responsive"></div>
+                <div class="grid grid-item">
+       <img src="https://i.ibb.co/3dChm8g/mmexport1687786979542.jpg" alt="mmexport1687786979542" border="0"class="my-image img img-responsive"></div>
+
+       <div class="grid grid-item">
+       <img src="https://i.ibb.co/GvFCgHF/mmexport1687786976302.jpg" alt="mmexport1687786976302" border="0"class="my-image img img-responsive"></div>     
+              
+              
+                    </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+     <!-- Modal container -->
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+  
+ 
+ 
+    <section class="contact-section section-padding section-bg-img"
+    id="wishes">
+      <div class="container">
+        <div class="row">
+          <div class="col col-sm-12">
+            <div class="section-title">
+              <h2>Đặt lịch trang điểm</h2>
+              <p>Cảm ơn bạn rất nhiều vì đã chọn chúng tôi.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-lg-6 col-md-7">
+           
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScPVdL7UMmzZ2iocTPIF84Fs5ym-G6aQmSE-HpjzFyNC12vvw/viewform?embedded=true" width="100%" height="742" frameborder="0" marginheight="0" marginwidth="0">Đang tải…</iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  
+  <section class="donate-section section-padding section-bg-color" id="donate">
+    <div class="container">
+      <div class="row">
+        <div class="col col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+          <div class="section-title">
+            <h2>Cổng thanh toán</h2>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col col-xs-12">
+          <div id="donate-modal">
+            <div class="donate-modal-content">
+              <div class="donate-modal-body">
+                <div class="donate-box">
+                  <div class="donate-card">
+                    <img class="qr-code-image" src="https://cdn.biihappy.com/ziiweb/website/649976f93a469a0f1d060ebb/5ef13a9f3b68ce09221a2f506cfc1fb2.jpeg">
+                    <p>Ngân hàng: <strong>MB Bank Ngân hàng TMCP Quân đội</strong></p>
+                    <p>Tên tài khoản: <strong>NGUYEN TAN TAI</strong></p>
+                    <p>Số tài khoản: <strong>0327376370</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+  
+      <footer class="site-footer footer-style-1">
+      <div class="inner">
+      <div class="couple-pic"> <img src=
+        "https://iili.io/HPiLNhQ.md.jpg"
+        alt="Văn Long & Hồng Hạnh Wedding site!"></div>
+        <h2>Thank you!</h2>
+      </div>
+    </footer>
+  </div>  
+  
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  
+  <script src=
+  "https://thiepmoil231217h.iwedding.info/templates/template15/js/jquery-plugin-collection.js?v=202306251"></script>
+  
+  <script src=
+  "https://thiepmoil231217h.iwedding.info/templates/template15/js/script.js?v=202306251"></script>
+  
+  
+    <script>
+    $(document).ready(function() {
+  
+  
+ $('.my-image').on('click', function() {
+  var imageSrc = $(this).attr('src');
+
+  $('#modalImage').attr('src', imageSrc);
+  $('#myModal').addClass('show'); // Thêm class 'show' để hiển thị modal
+
+  // Thực hiện setTimeout để đảm bảo rằng hiệu ứng transition đã hoàn thành trước khi áp dụng width mới
+  setTimeout(function() {
+    $('.modal-content').css('width', '80%');
+    $('.close').css('transform', 'rotate(180deg)');
+  }, 100);
+});
+
+// Khi người dùng nhấp chuột vào nút đóng
+$('.close').on('click', function() {
+  $('#myModal').removeClass('show'); // Xóa class 'show' để ẩn modal
+
+  // Thực hiện setTimeout để đảm bảo rằng hiệu ứng transition đã hoàn thành trước khi áp dụng width mới
+  setTimeout(function() {
+    $('.modal-content').css('width', '0');
+    $('.close').css('transform', 'none');
+  }, 500);
+});  
+  
+    });
+  </script>
+
+</body>
+</html>
