@@ -30,59 +30,33 @@
   <link href=
   "https://iwedding.info/common/fonts/fonts.css?v=202306251"
   rel="stylesheet"> 
-
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
 
  <style>
-    /* CSS cho modal */
-    .modal {
-      display: none; /* Mặc định ẩn modal */
-      position: fixed; /* Vị trí cố định trên trang */
-      z-index: 100000; /* Hiển thị modal trước tất cả các phần tử khác */
-      padding-top: 50px; /* Khoảng cách từ đỉnh trang đến modal */
-      left: 0;
-      top: 0;
-      width: 100%; /* Chiều rộng modal bằng 100% của trang */
-      height: 100%; /* Chiều cao modal bằng 100% của trang */
-      overflow: auto; /* Cho phép cuộn trang khi modal hiển thị */
-      background-color: rgb(0,0,0); /* Màu nền của modal */
-      background-color: rgba(0,0,0,0.9); /* Màu nền của modal với độ mờ */
-    }
-    
-    .modal-content {
-      margin: auto; /* Hiển thị modal ở giữa trang */
-      display: block; /* Hiển thị các phần tử thành khối */
-      width: 80%; /* Chiều rộng của modal */
-      max-width: 700px; /* Chiều rộng tối đa của modal */
-      transition: width 0.5s ease; /* Hiệu ứng transition */
-    }
-    
-    /* CSS cho nút đóng */
-    .close {
-      color: #fff; /* Màu chữ của nút đóng */
-      float: right; /* Đặt nút đóng bên phải */
-      font-size: 28px; /* Kích thước chữ của nút đóng */
-      font-weight: bold; /* In đậm chữ của nút đóng */
-      margin-right: 20px; /* Khoảng cách nút đóng với modal */
-      transition: transform 0.3s ease; /* Hiệu ứng transition */
-    }
-    
-    /* CSS cho hiệu ứng phóng to hình ảnh */
-    .modal-content img {
-      width: 100%;
-      height: auto;
-      transition: transform 0.5s ease; /* Hiệu ứng transition */
-    }
-    /* CSS cho hiệu ứng phóng to khi modal hiển thị */
-    .modal.show .modal-content {
-      width: 80%;
-    }
-    
-    /* CSS cho hiệu ứng xoay nút đóng khi modal hiển thị */
-    .modal.show .close {
-      transform: rotate(180deg);
-    }
-  </style>
+ .image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Chia lưới thành 3 cột bằng nhau */
+  grid-gap: 10px; /* Khoảng cách giữa các hình ảnh */
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Để cắt ảnh */
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+a{
+  color:#000;
+}
+    </style>
 
 </head>
 <body>
@@ -231,10 +205,24 @@
                 alt=""></div>
                 <div class="details">
                   <div class="inner">
-                    <h2>Nguyễn Tấn Tài</h2>
-                    <p>Sinh năm 2006. Lớn lên và sinh sống tại Tây Ninh. Tôi bắt đầu học nghề từ giữa tháng 9 năm 2022.</p>
+                    <h2>Giới thiệu</h2>
+                    <p>Tôi tên Nguyễn Tấn Tái sinh năm 2006. Lớn lên và sinh sống tại Tây Ninh. Tôi bắt đầu học nghề từ giữa tháng 9 năm 2022.
+                  </p>
+              
                     <ul class="social-links"></ul>
                   </div>
+                  <hr>
+                        <div class="inner">
+
+
+                    <h2>Liên hệ</h2>
+
+                    <p><i class="bi bi-telephone"></i><a href="tel:0327376370" class="text-decoration-none"><b> 0327.376.370</b></a>
+                  <br/><i class="bi bi-geo-alt"></i> Phước Bình 1, Suối Đá, Dương Minh Châu, Tây Ninh.
+                  <br/>
+                 <i class="bi bi-facebook"> </i> <a class="text-decoration-none"href="https://www.facebook.com/tantai.976"target="_blank"> tantai.976</a>
+                  </p>
+               </div>
                 </div>
               </div>
             </div>
@@ -256,37 +244,16 @@
         </div>
         <div class="row">
           <div class="col col-xs-12">
-            <div class=
-            "gallery-container gallery-fancybox masonry-gallery">
-              <div class="grid grid-item">
-         <img src=
-                "https://i.ibb.co/By2zTnW/received-1437561073677038.jpg"
-                alt="" class="my-image img img-responsive">
-              </div>
-              <div class="grid grid-item">
-       <img src="https://i.ibb.co/2sYjmY8/mmexport1687786983581.jpg" alt="mmexport1687786983581" border="0"class="my-image img img-responsive"></div>
-                <div class="grid grid-item">
-       <img src="https://i.ibb.co/3dChm8g/mmexport1687786979542.jpg" alt="mmexport1687786979542" border="0"class="my-image img img-responsive"></div>
+        <div id="img" class="image-grid">
+         
+         
 
-       <div class="grid grid-item">
-       <img src="https://i.ibb.co/GvFCgHF/mmexport1687786976302.jpg" alt="mmexport1687786976302" border="0"class="my-image img img-responsive"></div>     
-              
-              
                     </div>
           </div>
         </div>
       </div>
     </section>
-    
-     <!-- Modal container -->
-  <div id="myModal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modalImage">
-  </div>
-  
- 
- 
-    <section class="contact-section section-padding section-bg-img"
+        <section class="contact-section section-padding section-bg-img"
     id="wishes">
       <div class="container">
         <div class="row">
@@ -324,7 +291,7 @@
               <div class="donate-modal-body">
                 <div class="donate-box">
                   <div class="donate-card">
-                    <img class="qr-code-image" src="https://cdn.biihappy.com/ziiweb/website/649976f93a469a0f1d060ebb/5ef13a9f3b68ce09221a2f506cfc1fb2.jpeg">
+                    <img class="qr-code-image" src="https://i.ibb.co/Fb79zHv/1687800791494.png">
                     <p>Ngân hàng: <strong>MB Bank Ngân hàng TMCP Quân đội</strong></p>
                     <p>Tên tài khoản: <strong>NGUYEN TAN TAI</strong></p>
                     <p>Số tài khoản: <strong>0327376370</strong></p>
@@ -364,33 +331,36 @@
   
     <script>
     $(document).ready(function() {
-  
-  
- $('.my-image').on('click', function() {
-  var imageSrc = $(this).attr('src');
+ 
+ 
+ $.ajax({ 
+    type: 'GET', 
+    url: 'https://opensheet.elk.sh/1obUmsyo17E_1-d1PCEKgjs4OquCscqHp516Cy7tzQB4/taibeauty!A1:Z1000', 
+    dataType: 'json',
+    success: function (data) {
+        $.each(data.reverse(), function(index, element) {
+     
+   console.log(element.link)
+   
+           $('#img').append('<div class="image"><img src="' + element.link + '" data-zoom="'+element.link+'" class="" alt="Taibeauty"></div>'); 
+           
+        })
+        
 
-  $('#modalImage').attr('src', imageSrc);
-  $('#myModal').addClass('show'); // Thêm class 'show' để hiển thị modal
 
-  // Thực hiện setTimeout để đảm bảo rằng hiệu ứng transition đã hoàn thành trước khi áp dụng width mới
-  setTimeout(function() {
-    $('.modal-content').css('width', '80%');
-    $('.close').css('transform', 'rotate(180deg)');
-  }, 100);
-});
+    }
+        });
+ 
+ 
+ 
+ 
+ ///https://opensheet.elk.sh/1obUmsyo17E_1-d1PCEKgjs4OquCscqHp516Cy7tzQB4/taibeauty!A1:Z1000 
+ 
+ 
 
-// Khi người dùng nhấp chuột vào nút đóng
-$('.close').on('click', function() {
-  $('#myModal').removeClass('show'); // Xóa class 'show' để ẩn modal
 
-  // Thực hiện setTimeout để đảm bảo rằng hiệu ứng transition đã hoàn thành trước khi áp dụng width mới
-  setTimeout(function() {
-    $('.modal-content').css('width', '0');
-    $('.close').css('transform', 'none');
-  }, 500);
-});  
-  
-    });
+
+    }) 
   </script>
 
 </body>
