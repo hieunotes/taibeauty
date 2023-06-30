@@ -11,51 +11,171 @@
   <meta property="og:title" content=
   "Tai Beauty Bridal">
   <meta property="og:url" content=
-  "/">
+  "">
   <meta property="og:description" content=
   "Chinh phục mọi ánh nhìn, khiến bạn trở thành cô dâu lộng lẫy nhất.">
   <meta property="og:image" content=
-  "/">
+  "https://i.postimg.cc/YSbrYkwY/received-1437561073677038.jpg">
   <meta property="og:image:url" content=
-  "/">
+  "https://i.postimg.cc/YSbrYkwY/received-1437561073677038.jpg">
   <link rel="shortcut icon" type="image/x-icon" href=
   "https://raw.githubusercontent.com/harrydang-03/taibeauty/main/20230626_231707_0000.ico">
   
   <link href=
-  "https://iwedding.info/templates/template15/css/libs.css?v=202306251"
+  "https://thiepmoil231217h.iwedding.info/templates/template15/css/libs.css?v=202306251"
   rel="stylesheet">
     <link href=
-  "https://iwedding.info/templates/template15/css/style.css?v=202306251"
+  "https://thiepmoil231217h.iwedding.info/templates/template15/css/style.css?v=202306251"
   rel="stylesheet">
   <link href=
   "https://iwedding.info/common/fonts/fonts.css?v=202306251"
   rel="stylesheet"> 
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-
  <style>
- .image-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Chia lưới thành 3 cột bằng nhau */
-  grid-gap: 10px; /* Khoảng cách giữa các hình ảnh */
-}
-
-.image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; /* Để cắt ảnh */
-}
-
-.image img {
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-a{
+ /*** CSS CUSTOM***/
+ a{
   color:#000;
 }
+ /***END CUSTOM***/
+ 
+/*** Hiệu ứng slide ảnh***/
+.hero-slider {
+  width: 100%;
+  height: calc(100vh - 210px);
+  min-height: 650px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  z-index
+}
+@media (max-width: 991px) {
+  .hero-slider {
+    height: 1080px;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-slider {
+    height: 500px;
+    min-height: auto;
+  }
+}
+/***END SLIDE****/
+
+
+/**GRID ẢNH**/
+.gg-container {
+  --main-color: #000;
+  --secondary-color: #111;
+  --txt-color: #fff;
+  --img-bg-color: rgba(240, 240, 240, 0.9);
+  --backdrop-color: rgba(240, 240, 240, 0.9);
+  --gap-length: 2px;
+  --row-height:;
+  --column-width: 220px;
+}
+.gg-container *[data-theme="dark"] {
+  --main-color: #ddd;
+  --secondary-color: #eee;
+  --txt-color: #111;
+  --img-bg-color: rgba(20, 20, 20, 0.9);
+  --backdrop-color: rgba(30, 30, 30, 0.9);
+}
+.gg-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--column-width), 1fr));
+  grid-auto-rows: var(--row-height);
+  grid-gap: var(--gap-length);
+  margin: 20px 0;
+}
+.gg-box img {
+  object-fit: cover;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background: var(--img-bg-color);
+}
+.gg-box img:hover {
+  opacity: 0.98;
+}
+#gg-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--backdrop-color);
+  z-index: 9999;
+  text-align: center;
+}
+#gg-screen .gg-image {
+  height: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+#gg-screen .gg-image img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+}
+.gg-btn {
+  width: 35px;
+  height: 35px;
+  background: var(--main-color);
+  color: var(--txt-color);
+  text-align: center;
+  line-height: 35px;
+  cursor: pointer;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  font-size: 20px;
+  box-sizing: border-box;
+  padding-left: 2px;
+  position: fixed;
+  bottom: 10px;
+}
+.gg-btn:hover {
+  background: var(--secondary-color);
+}
+.gg-close {
+  top: 10px;
+}
+.gg-close,
+.gg-next {
+  right: 10px;
+}
+@media (min-width: 478px) {
+  .gg-box img:nth-child(2n):not(:last-of-type) {
+    grid-row-end: span 2;
+  }
+  [data-layout="horizontal"] img:nth-child(2n):not(:last-of-type) {
+    grid-column-end: span 2;
+    grid-row-end: span 1;
+  }
+  [data-layout="square"] img:nth-child(2n):not(:last-of-type) {
+    grid-row-end: span 1;
+    grid-column-end: span 1;
+  }
+}
+@media (max-width: 768px) {
+  .gg-box {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-auto-rows: calc(var(--row-height) - 15vh);
+    margin: 10px 0;
+  }
+}
+@media (max-width: 450px) {
+  .gg-box {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  }
+}
+/**END GRID ẢNH**/
     </style>
 
 </head>
@@ -111,7 +231,7 @@ a{
       </nav--->
       
     </header>
-    <section class="hero-slider hero-style-1" id="home">
+    <section class="hero-slider hero-style-1">
       <div class="swiper-container">
         <div class="slide-main-text">
           <div class="container">
@@ -125,30 +245,34 @@ a{
           </div>
           <div class="pattern"></div>
         </div>
+     
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="slide-inner slide-bg-image"
-            data-background="https://i.ibb.co/2sYjmY8/mmexport1687786983581.jpg">
+            data-background="https://i.postimg.cc/Y2bvf4dM/mmexport1687786976302.jpg">
             </div>
           </div>
           <div class="swiper-slide">
             <div class="slide-inner slide-bg-image"
-            data-background="https://i.ibb.co/3dChm8g/mmexport1687786979542.jpg">
+            data-background="https://i.postimg.cc/0jWr83zb/mmexport1687786979542.jpg">
             </div>
           </div>
              <div class="swiper-slide">
 
             <div class="slide-inner slide-bg-image"
 
-            data-background="https://i.ibb.co/GvFCgHF/mmexport1687786976302.jpg">
+            data-background="https://i.postimg.cc/FRx761mb/mmexport1687786983581.jpg">
             </div>
           </div>
       
       
-      
+    
+
+
      
 
         </div>
+      
         <div class="swiper-pagination"></div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
@@ -212,8 +336,8 @@ a{
           <div class="col col-lg-10 col-lg-offset-1">
             <div class="couple-area">
               <div class="couple-row clearfix">
-                <div class="img-holder"><img src=
-                "https://i.ibb.co/By2zTnW/received-1437561073677038.jpg"
+                <div class="img-holder"><img style="width: 100%;" src=
+                "https://i.postimg.cc/YSbrYkwY/received-1437561073677038.jpg"
                 alt=""></div>
                 <div class="details">
                   <div class="inner">
@@ -256,8 +380,6 @@ a{
         </div>
         <div class="row">
           <div class="col col-xs-12">
-        <div id="img" class="image-grid">
-         
          
 
                     </div>
@@ -265,6 +387,14 @@ a{
         </div>
       </div>
     </section>
+    
+      <div  class="gg-container">
+
+         <div id="img" class="gg-box">
+
+          
+         </div>
+      
         <section class="contact-section section-padding section-bg-img"
     id="wishes">
       <div class="container">
@@ -278,7 +408,6 @@ a{
         </div>
         <div class="row">
           <div class="col col-lg-6 col-md-7">
-           
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScPVdL7UMmzZ2iocTPIF84Fs5ym-G6aQmSE-HpjzFyNC12vvw/viewform?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">Đang tải…</iframe>
           </div>
         </div>
@@ -317,29 +446,94 @@ a{
     </div>
   </section>
  
+ 
+    
+    
       <footer class="site-footer footer-style-1">
       <div class="inner">
       <div class="couple-pic"> <img src=
-        "https://iili.io/HPiLNhQ.md.jpg"
+        "https://i.postimg.cc/yNV6Dx27/IMG-20230630-204058.jpg"
         alt="Tài Beauty"></div>
         <h2>Thank you!</h2>
       </div>
     </footer>
   </div>  
-  
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-  
   <script src=
   "https://iwedding.info/templates/template15/js/jquery-plugin-collection.js?v=202306251"></script>
   
-  <script src=
-  "https://iwedding.info/templates/template15/js/script.js?v=202306251"></script>
-  
-  
-    <script>
+
+<script>
     $(document).ready(function() {
- 
- 
+
+
+
+   // SLIDER
+    var menu = [];
+    jQuery('.swiper-slide').each( function(index){
+        menu.push( jQuery(this).find('.slide-inner').attr("data-text") );
+    });
+    var interleaveOffset = 0.5;
+    var swiperOptions = {
+        loop: true,
+        speed: 1000,
+        parallax: true,
+        autoplay: {
+            delay: 6500,
+            disableOnInteraction: false,
+        },
+        watchSlidesProgress: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        on: {
+            progress: function() {
+                var swiper = this;
+                for (var i = 0; i < swiper.slides.length; i++) {
+                    var slideProgress = swiper.slides[i].progress;
+                    var innerOffset = swiper.width * interleaveOffset;
+                    var innerTranslate = slideProgress * innerOffset;
+                    swiper.slides[i].querySelector(".slide-inner").style.transform =
+                    "translate3d(" + innerTranslate + "px, 0, 0)";
+                }      
+            },
+
+            touchStart: function() {
+              var swiper = this;
+              for (var i = 0; i < swiper.slides.length; i++) {
+                swiper.slides[i].style.transition = "";
+              }
+            },
+
+            setTransition: function(speed) {
+                var swiper = this;
+                for (var i = 0; i < swiper.slides.length; i++) {
+                    swiper.slides[i].style.transition = speed + "ms";
+                    swiper.slides[i].querySelector(".slide-inner").style.transition =
+                    speed + "ms";
+                }
+            }
+        }
+    };
+
+    var swiper = new Swiper(".swiper-container", swiperOptions);
+
+    // DATA BACKGROUND IMAGE
+    var sliderBgSetting = $(".slide-bg-image");
+    sliderBgSetting.each(function(indx){
+        if ($(this).attr("data-background")){
+            $(this).css("background-image", "url(" + $(this).data("background") + ")");
+        }
+    });
+
+
+ ////API
  $.ajax({ 
     type: 'GET', 
     url: 'https://opensheet.elk.sh/1obUmsyo17E_1-d1PCEKgjs4OquCscqHp516Cy7tzQB4/taibeauty!A1:Z1000', 
@@ -349,18 +543,62 @@ a{
      
    console.log(element.link)
    
-           $('#img').append('<div class="image"><img src="' + element.link + '" class="" alt="Taibeauty"></div>'); 
+           $('#img').append('<img src="' + element.link + '" class="gridGallery" alt="Taibeauty">'); 
            
         })
         
+   
+   
+   
+   /// Grid ảnh     
+       const root = document.querySelector("body, html");
+const container = document.querySelector('.gg-container');
+const images = document.querySelectorAll(".gg-box > img");
+const l = images.length;
 
+for(var i = 0; i < l; i++) {
+  images[i].addEventListener("click", function(i) {
+    var currentImg = this;
+    const parentItem = currentImg.parentElement, screenItem = document.createElement('div');
+    screenItem.id = "gg-screen";
+    container.prepend(screenItem);
+    if (parentItem.hasAttribute('data-theme')) screenItem.setAttribute("data-theme", "dark");
+    var route = currentImg.src;
+    root.style.overflow = 'hidden';
+    screenItem.innerHTML = '<div class="gg-image"></div><div class="gg-close gg-btn">&times</div>';
+    const first = images[0].src, last = images[l-1].src;
+    const imgItem = document.querySelector(".gg-image"), close = document.querySelector(".gg-close");
+    imgItem.innerHTML = '<img src="' + route + '">';
 
-    }
-        });
  
- 
- 
- 
+
+    screenItem.addEventListener("click", function(e) {
+      if (e.target == this || e.target == close) hide();
+    });
+
+    root.addEventListener("keydown", function(e) {
+  if (e.keyCode == 27 ) hide();
+    });
+
+    function hide() {
+      root.style.overflow = 'auto';
+      screenItem.remove();
+    };
+  });
+}
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    } 
+ });
+   
  ///https://opensheet.elk.sh/1obUmsyo17E_1-d1PCEKgjs4OquCscqHp516Cy7tzQB4/taibeauty!A1:Z1000 
  
  
@@ -368,7 +606,15 @@ a{
 
 
     }) 
+     
   </script>
 
+
+
+<!------
+Code được SAO CHÉP từ web khác. Và có tùy chỉnh theo nhu cầu cá nhân.
+
+
+--->
 </body>
 </html>
