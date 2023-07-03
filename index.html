@@ -545,13 +545,14 @@
 
    var link = element.link;
    
-  if(element.link === ''){
+   if(element.link === '' || element.link === undefined){
  link = '';
 }
 else{ 
   
-     $('#img').append('<img src="' + link + '" class="gridGallery" alt="Taibeauty">'); 
+     $('#img').append('<img src="http://cf.jare.io/?u=' + link + '" class="gridGallery" alt="Taibeauty">'); 
 }    
+        
         })
         
    
