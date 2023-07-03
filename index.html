@@ -543,7 +543,15 @@
      
    console.log(element.link)
    
-           $('#img').append('<img src="' + element.link + '" class="gridGallery" alt="Taibeauty">'); 
+      var link = element.link;
+   
+  if(element.link === ''){
+ link = '';
+}
+else{ 
+  
+     $('#img').append('<img src="' + link + '" class="gridGallery" alt="Taibeauty">'); 
+}
            
         })
         
